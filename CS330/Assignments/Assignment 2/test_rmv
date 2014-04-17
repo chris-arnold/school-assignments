@@ -1,0 +1,34 @@
+#!/bin/sh -v
+
+touch file1 file2 file3 file4 file5 file6 file7 file8 file9 file10
+
+ls
+
+./rmv
+
+ls ~
+
+./rmv -h
+
+./rmv -c file1 
+
+./rmv file2 -a here file9
+
+./rmv file3 -a
+
+./rmv file4 -c -a here
+
+./rmv file5 file6 -c file7 -a file8
+
+./rmv file10
+
+./rmv * -c
+
+./rmv file* -c
+
+ls
+
+ls ~/trash
+
+ls here
+

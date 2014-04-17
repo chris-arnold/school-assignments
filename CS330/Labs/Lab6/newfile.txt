@@ -1,0 +1,9 @@
+This is an example file
+testing the use of grep and sed.
+Sed will modify the spelling of colour.
+Red colour, blue colour, green colour, orange colour.
+Grep will display specific lines.  
+This is for our pipes lab.
+Pipes provide the user with a synchronized means of
+interprocess communication.
+Two kinds of pipes exist: named or unnamed.

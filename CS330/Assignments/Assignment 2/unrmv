@@ -1,0 +1,92 @@
+#!/bin/bash
+
+#BASH Script for CS330 Assignment 2
+cflag=false
+aflag=false
+seta=-999				#location in list that set a flag. for determining altdir info
+counter=0
+files=()
+src="$HOME/trash"
+dest=`pwd`
+
+for i in $*; do
+	let counter=counter+1
+	case $i in
+		-c)
+			cflag=true
+			;;
+		-a)
+			aflag=true
+			seta=$counter
+			;;
+		-h)
+			echo "rmv removes a file to a trash can."
+			echo "Usage is: rmv <file_1> [<file_2> ... <file_n>] [-a alternate_directory] [- c]"
+			exit 1
+			;;
+		*)
+			if [ -d $i ]; then
+				if [ $(($counter-1)) == $seta ]; then	#if dir and after -a its altdir
+					altdir=$i
+				else	#if dir not after -a error as will not del dir
+					echo $i is directory. unrmv cannot un-remove a directory. Use -h 'for' usage details.
+					exit 1
+				fi
+			else
+				files+=($i)
+			fi
+			;;
+	esac
+done
+
+if [[ $aflag == 'true' ]]; then		#check alternate directory validity
+	if [[ $altdir == "" ]]; then
+		read -p "Enter an alternate directory: " altdir
+	fi
+	if [ -d $altdir ]; then
+		src=$altdir
+	else
+		echo Specified alternate directory $altdir could not be found.
+		exit 1
+	fi
+fi
+
+if [ ${#files[@]} == 0 ]; then
+	files=(`ls $src`)
+fi
+
+for i in ${files[@]}; do
+	if [ -f $src/$i ]; then
+		if [ $cflag == 'true' ]; then
+			while :
+			do
+				read -n1 -p "Are you sure you wish to restore $i [y/n]: " resp
+				case $resp in
+					y|Y)
+						echo;echo Restoring $i
+						mv "$src/$i" "$dest"
+						break
+						;;
+					n|N)
+						echo;echo Not Restoring $i
+						break
+						;;
+					q|Q)
+						echo;echo Quitting program
+						exit 1
+						;;
+					*)
+						echo;echo Invalid Input
+						;;
+				esac
+			done	
+
+		else
+			echo Restoring $i
+			mv "$src/$i" "$dest"
+		fi
+	else
+		echo File $i doesn not exist.
+		exit 1
+	fi
+done

@@ -1,0 +1,193 @@
+Script started on Sat 19 Oct 2013 02:50:39 PM CST
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 3[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 3[00m$ make install
+g++ -c -g myshell.c
+g++ -c -g myshellfunctions.c
+g++ myshell.o myshellfunctions.o -o run
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 3[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 3[00m$ ./run cat /etc/motd
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Oct 19 14:22:54 CST 2013
+
+  System load:  0.06              Processes:           95
+  Usage of /:   22.1% of 9.47GB   Users logged in:     1
+  Memory usage: 33%               IP address for eth0: 172.16.1.77
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+71 packages can be updated.
+34 updates are security updates.
+
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 26. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 186.
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 3[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 3[00m$ run[K[K[K./run
+==>cat /etc/motd
+Welcome to Ubuntu 12.04.3 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sat Oct 19 14:22:54 CST 2013
+
+  System load:  0.06              Processes:           95
+  Usage of /:   22.1% of 9.47GB   Users logged in:     1
+  Memory usage: 33%               IP address for eth0: 172.16.1.77
+  Swap usage:   0%
+
+  Graph this data and manage this system at https://landscape.canonical.com/
+
+71 packages can be updated.
+34 updates are security updates.
+
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 26. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 187.
+==>cd ..
+Directory successfully changed to ..
+==>ls
+Assignment 1  Assignment 2  Assignment 3
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 272.
+==>cd Assignment 3
+Directory successfully changed to Assignment 3
+==>ls
+a3.log	  myshell.c	      myshellfunctions.h  myshell.o
+Makefile  myshellfunctions.c  myshellfunctions.o  run
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 270.
+==>sleep 45 &
+==>Executing in background: 16854
+sleep 45 &
+==>Executing in background: 16856
+ls
+a3.log	  myshell.c	      myshellfunctions.h  myshell.o
+Makefile  myshellfunctions.c  myshellfunctions.o  run
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 270.
+==>ps
+  PID TTY          TIME CMD
+16781 pts/2    00:00:00 bash
+16849 pts/2    00:00:00 run
+16853 pts/2    00:00:00 run
+16854 pts/2    00:00:00 sleep
+16855 pts/2    00:00:00 run
+16856 pts/2    00:00:00 sleep
+16858 pts/2    00:00:00 ps
+------------------------------------
+CPU Time 0ms, Elapsed time: 22ms
+Preempted Involuntarily 17. Number of voluntary CPU give up 3
+Page Faults 1, Non-disk I/O page Fault 286.
+==>cat /Make     Makefile
+#da make file
+#OBJ = testgetopt.o main.o testreaddir.o getFlagInfo.o
+
+myshellfunctions.o: myshellfunctions.c myshellfunctions.h
+	g++ -c -g myshellfunctions.c
+
+
+myshell.o: myshell.c myshellfunctions.h
+	g++ -c -g myshell.c
+
+install: myshell.o myshellfunctions.o
+	g++ myshell.o myshellfunctions.o -o run
+
+clean: 
+	rm -f *.o run
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 188.
+==>bg
+Background Processes:
+[1] 16854
+[2] 16856
+==>exit
+There is still 2 background process active. Cannot exit.
+==>
+Background process 16854 Complete
+------------------------------------
+CPU Time 0ms, Elapsed time: 45021ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 4
+Page Faults 1, Non-disk I/O page Fault 203.
+bg
+Background Processes:
+[1] 16856
+==>
+Background process 16856 Complete
+------------------------------------
+CPU Time 0ms, Elapsed time: 45009ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 2
+Page Faults 0, Non-disk I/O page Fault 204.
+e bg
+There are no active background processes!
+==>make clean
+rm -f *.o run
+------------------------------------
+CPU Time 0ms, Elapsed time: 5ms
+Preempted Involuntarily 1. Number of voluntary CPU give up 6
+Page Faults 0, Non-disk I/O page Fault 651.
+==>make install
+g++ -c -g myshell.c
+g++ -c -g myshellfunctions.c
+g++ myshell.o myshellfunctions.o -o run
+------------------------------------
+CPU Time 432ms, Elapsed time: 484ms
+Preempted Involuntarily 20. Number of voluntary CPU give up 28
+Page Faults 0, Non-disk I/O page Fault 14933.
+==>run
+exec failure: No such file or directory
+------------------------------------
+CPU Time 0ms, Elapsed time: 1ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 108.
+==>./run
+==>ls
+a3.log	  myshell.c	      myshellfunctions.h  myshell.o
+Makefile  myshellfunctions.c  myshellfunctions.o  run
+------------------------------------
+CPU Time 0ms, Elapsed time: 2ms
+Preempted Involuntarily 8. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 272.
+==>ps
+  PID TTY          TIME CMD
+16781 pts/2    00:00:00 bash
+16849 pts/2    00:00:00 run
+16853 pts/2    00:00:00 run <defunct>
+16855 pts/2    00:00:00 run <defunct>
+16874 pts/2    00:00:00 run
+16876 pts/2    00:00:00 ps
+------------------------------------
+CPU Time 0ms, Elapsed time: 7ms
+Preempted Involuntarily 14. Number of voluntary CPU give up 1
+Page Faults 0, Non-disk I/O page Fault 288.
+==>sleep 5 &
+==>Executing in background: 16878
+bg
+Background Processes:
+[1] 16878
+==>
+Background process 16878 Complete
+------------------------------------
+CPU Time 0ms, Elapsed time: 5005ms
+Preempted Involuntarily 0. Number of voluntary CPU give up 2
+Page Faults 0, Non-disk I/O page Fault 205.
+exit
+------------------------------------
+CPU Time 0ms, Elapsed time: 26307ms
+Preempted Involuntarily 46. Number of voluntary CPU give up 11
+Page Faults 0, Non-disk I/O page Fault 863.
+==>exit
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 3[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 3[00m$ exit
+exit
+
+Script done on Sat 19 Oct 2013 02:53:50 PM CST

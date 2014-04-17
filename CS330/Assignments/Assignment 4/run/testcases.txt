@@ -1,0 +1,28 @@
+Test Commands
+
+./run ls @ wc -l
+./run cat [ test.txt
+./run ls ] lsout.txt
+./run wc [ test.txt ] wc.txt
+./run cat [ test.txt ] catout.txt
+./run cat [ test.txt @ wc
+./run ps -A @ wc ] ps.txt
+./run cat [ colorfile.txt @ sed -e “s/color/COLOUR/g” ] newfile.txt
+
+NO background process testing from here as the unix shell picks it up and won’t pass to ./run
+
+
+Inside of run terminal
+ls @ wc -l
+cat [ test.txt
+ls ] lsout.txt
+wc [ test.txt ] wc.txt
+cat [ test.txt ] catout.txt
+cat [ test.txt @ wc
+ps -A @ wc ] ps.txt
+cat [ colorfile.txt @ sed -e “s/color/COLOUR/g” ] newfile.txt
+sleep 10 ] sleep.txt &
+sleep 10 &
+sleep 10  @ wc &
+bg
+exit

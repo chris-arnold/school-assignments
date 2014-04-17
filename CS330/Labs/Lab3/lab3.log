@@ -1,0 +1,71 @@
+Script started on Fri Sep 27 10:59:58 2013
+Script on a049401[1]% ls
+[0m[01;32mbackup.sh[0m*  [0mlab3.log[0m  [0mtest.c[0m  [0mtest1.c[0m  [0mtest2.c[0m  [0mtest3.c[0m
+[mScript on a049401[2]% ./backup.sh
+Would you like to create backup directory?
+NO
+No backup directory created.
+Script on a049401[3]% ./backup.sh
+Would you like to create backup directory?
+n
+No backup directory created.
+Script on a049401[4]% ./backup.sh
+Would you like to create backup directory?
+up
+Invalid input
+Script on a049401[5]% ./backup.sh
+Would you like to create backup directory?
+yes
+Backing up test.c
+Backing up test1.c
+Backing up test2.c
+Backing up test3.c
+BACKUP COMPLETE!
+Script on a049401[6]% rm -r backup
+Script on a049401[7]% rm -r backup[23G./backup.sh[K
+Would you like to create backup directory?
+Yes
+Backing up test.c
+Backing up test1.c
+Backing up test2.c
+Backing up test3.c
+BACKUP COMPLETE!
+Script on a049401[8]% ./backup.sh[23Grm -r backup
+Script on a049401[9]% rm -r backup[23G./backup.sh[K
+Would you like to create backup directory?
+y
+Backing up test.c
+Backing up test1.c
+Backing up test2.c
+Backing up test3.c
+BACKUP COMPLETE!
+Script on a049401[10]% ls
+[0m[01;34mbackup[0m/  [01;32mbackup.sh[0m*  [0mlab3.log[0m  [0mtest.c[0m  [0mtest1.c[0m  [0mtest2.c[0m  [0mtest3.c[0m
+[mScript on a049401[11]% touch test.c test1.c test3.c tst[K[Kest2.c
+Script on a049401[12]% touch test.c test1.c test3.c test2.c[24Gls[K./backup.sh
+Backup version of test.c is old...
+Backup version of test1.c is old...
+Backup version of test2.c is old...
+Backup version of test3.c is old...
+BACKUP COMPLETE!
+Script on a049401[13]% touch test1.c
+Script on a049401[14]% touch test1.c[24G./backup.sh[K
+Backup version of test1.c is old...
+BACKUP COMPLETE!
+Script on a049401[15]% touch test.c test3.c
+Script on a049401[16]% touch test.c test3.c[24G./backup.sh[K
+Backup version of test.c is old...
+Backup version of test3.c is old...
+BACKUP COMPLETE!
+Script on a049401[17]% touch newfile.c
+Script on a049401[18]% touch newfile.c[24G./backup.sh[K
+Backing up newfile.c
+BACKUP COMPLETE!
+Script on a049401[19]% ls
+[0m[01;34mbackup[0m/  [01;32mbackup.sh[0m*  [0mlab3.log[0m  [0mnewfile.c[0m  [0mtest.c[0m  [0mtest1.c[0m  [0mtest2.c[0m  [0mtest3.c[0m
+[mScript on a049401[20]% ls backup/
+[0m[0mnewfile.c[0m  [0mtest.c[0m  [0mtest1.c[0m  [0mtest2.c[0m  [0mtest3.c[0m
+[mScript on a049401[21]% exit
+exit
+
+Script done on Fri Sep 27 11:02:01 2013

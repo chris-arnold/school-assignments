@@ -1,0 +1,82 @@
+Script started on Tue 24 Sep 2013 12:21:00 PM CST
+]0;chris@Hydra: ~/CS330/Labs/Lab2[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab2[00m$ make clean install
+rm -f *.o runme
+g++ -c -g oneline.cpp
+g++ -c -g main.cpp
+g++ main.o oneline.o -o runme
+]0;chris@Hydra: ~/CS330/Labs/Lab2[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab2[00m$ ./runme
+Reversing the Words
+see to test a is file This 
+Done Reversing the Words
+
+Reversing the Words
+words the reverse can we how 
+Done Reversing the Words
+
+Reversing the Words
+line one on 
+Done Reversing the Words
+
+Reversing the Words
+works it how see Let's 
+Done Reversing the Words
+
+Reversing the Words
+" grandeur rotting and dead man great a of breeze soft warm the with centuries of lethargy its of out awoke city the Monday on dawn at and inside time stagnant the up stirred wings their of flapping the and windows balcony the on screens the through pecking by palace presidential the into got vultures the weekend the "Over once: at all it read can program your if and breath one in all it say can I if see Let's Patriarch the of Autumn The from quote a with one long a Here's 
+Done Reversing the Words
+
+Reversing the Words
+test to just end the at line Another 
+Done Reversing the Words
+
+]0;chris@Hydra: ~/CS330/Labs/Lab2[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab2[00m$ valgrind --leak-check=yes ./runme
+==7049== Memcheck, a memory error detector
+==7049== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==7049== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==7049== Command: ./runme
+==7049== 
+Reversing the Words
+see to test a is file This 
+Done Reversing the Words
+
+Reversing the Words
+words the reverse can we how 
+Done Reversing the Words
+
+Reversing the Words
+line one on 
+Done Reversing the Words
+
+Reversing the Words
+works it how see Let's 
+Done Reversing the Words
+
+Reversing the Words
+" grandeur rotting and dead man great a of breeze soft warm the with centuries of lethargy its of out awoke city the Monday on dawn at and inside time stagnant the up stirred wings their of flapping the and windows balcony the on screens the through pecking by palace presidential the into got vultures the weekend the "Over once: at all it read can program your if and breath one in all it say can I if see Let's Patriarch the of Autumn The from quote a with one long a Here's 
+Done Reversing the Words
+
+Reversing the Words
+test to just end the at line Another 
+Done Reversing the Words
+
+==7049== 
+==7049== HEAP SUMMARY:
+==7049==     in use at exit: 0 bytes in 0 blocks
+==7049==   total heap usage: 142 allocs, 142 frees, 12,680 bytes allocated
+==7049== 
+==7049== All heap blocks were freed -- no leaks are possible
+==7049== 
+==7049== For counts of detected and suppressed errors, rerun with: -v
+==7049== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+]0;chris@Hydra: ~/CS330/Labs/Lab2[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab2[00m$ quit
+No command 'quit' found, did you mean:
+ Command 'quilt' from package 'quilt' (main)
+ Command 'luit' from package 'x11-utils' (main)
+ Command 'quot' from package 'quota' (main)
+ Command 'quiz' from package 'bsdgames' (universe)
+ Command 'qgit' from package 'qgit' (universe)
+quit: command not found
+]0;chris@Hydra: ~/CS330/Labs/Lab2[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab2[00m$ exit
+exit
+
+Script done on Tue 24 Sep 2013 12:21:43 PM CST

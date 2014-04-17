@@ -1,0 +1,38 @@
+Script started on Mon Nov 11 15:38:14 2013
+Script on a049406[1]% gcc server[K[K[K[K[K[KsocketServer.c socketInclude.h -o server
+Script on a049406[2]% server
+Parent: Server on port 4259
+Parent: Waiting for client
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Child: Done
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Child: Done
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Command listdir recieved.
+Request recieved to remove test.txt
+Request to send cows.txt recieved.
+Request to create test.txt recieved.
+Child: Done
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Child: Done
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Command listdir recieved.
+Request recieved to remove die.txt
+Request to send iwantthisfile recieved.
+Request to create test.txt recieved.
+Child: Done
+
+Script on a049406[3]% exit
+exit
+
+Script done on Mon Nov 11 15:56:26 2013

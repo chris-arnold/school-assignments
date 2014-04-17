@@ -1,0 +1,308 @@
+Script started on Sat Oct  5 14:03:13 2013
+Script on a049403[1]% g++ mymore.c
+Script on a049403[2]% ./a.out
+No command line arguements provided
+Script on a049403[3]% ./a.u[Kout main.cpp
+::::::::::::::::::::::::::::::
+The following file was not found: main.cpp
+::::::::::::::::::::::::::::::
+Script on a049403[4]% ./a.out mymore.c
+#include <unistd.h>
+#include <termios.h>  //Put with other include statements
+#include <cstdio>  
+#include <cstdlib> 
+#include <fcntl.h>
+#include <math.h>
+#include <cstring>
+
+using namespace std;
+
+
+
+int main( int argc, char *argv[] )
+{
+    struct termios initial_settings, new_settings;
+    int counter = 1;
+    bool flag;
+    int inFile, linesRead, readRtn;
+    char inChar[1], uInput[1];
+
+        tcgetattr(fileno(stdin), &initial_settings);
+        new_settings=initial_settings;
+        new_settings.c_lflag &= ~ICANON;
+        new_settings.c_lflag &= ~ECHO;
+        new_settings.c_cc[VMIN] = 1;
+        new_settings.c_cc[VTIME] = 0;
+        
+	if (tcsetattr(fileno(stdin), TCSANOW, &new_settings)!=0)
+        {
+             write( 1, "could not set attributes\n", 25);
+             return -1;
+        }
+
+	if ( argc == 1 )	//no command line arguements profided
+	{
+   	     write( 1, "No command line arguements provided\n", 36 );
+	}
+	else
+	{
+	    while ( counter < argc )
+        {
+            inFile = open( argv[counter], O_RDONLY );
+            if (inFile == -1)
+            {
+                write( 1, "::::::::::::::::::::::::::::::\nThe following file was not found: ", 65);
+                write( 1, ("%s", argv[counter]), ( strlen( argv[counter]) ) );
+                write( 1, "\n::::::::::::::::::::::::::::::\n", 32);
+                flag = 1;
+            //wait for user to input space
+                while ( flag )
+                {
+                    read( 0, uInput, 1);
+
+                    if ( uInput[0] == ' ' )
+                        flag = 0;
+                    if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                    {
+                        tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                        return 0;
+                    }
+                }
+            }
+            else
+            {
+                if ( argc > 2 )     //if more than one file, print file id header
+                {
+                                    while ( flag )
+                {
+                    read( 0, uInput, 1);
+
+                    if ( uInput[0] == ' ' )
+                        flag = 0;
+                    if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                    {
+                        tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                        return 0;
+                    }
+                }
+                    write( 1, "::::::::::::::::::::::::::::::\n", 31);
+                    write( 1, ("%s", argv[counter]), ( strlen( argv[counter]) ) );
+                    write( 1, "\n::::::::::::::::::::::::::::::\n", 32);
+                                            flag = 1;
+                        //wait for user to input space
+                        while ( flag )
+                        {
+                            read( 0, uInput, 1);
+
+                            if ( uInput[0] == ' ' )
+                                flag = 0;
+                            if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                            {
+                                tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                                return 0;
+                            }
+                        }  
+                }
+                linesRead = 0;
+                while ( (readRtn = read( inFile, inChar, 1 ) != 0) )
+                {
+                    if ( inChar[0] == '\n')
+                        linesRead += 1;
+                    write( 1, inChar, 1 );
+                    if ( linesRead == 20 )
+                    {
+                        flag = 1;
+                        //wait for user to input space
+                        while ( flag )
+                        {
+                            read( 0, uInput, 1);
+
+                            if ( uInput[0] == ' ' )
+                                flag = 0;
+                            if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                            {
+                                tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                                return 0;
+                            }
+                        }    
+                        linesRead = 0;
+                    }
+                }
+                close( inFile );
+            }
+            counter += 1;
+        }   
+	}  
+    tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+	return 0;
+}
+Script on a049403[5]% ./a.out main.cpp mymore.c /net/share/aliases/CS330-001.201 330
+::::::::::::::::::::::::::::::
+The following file was not found: main.cpp
+::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::
+mymore.c
+::::::::::::::::::::::::::::::
+#include <unistd.h>
+#include <termios.h>  //Put with other include statements
+#include <cstdio>  
+#include <cstdlib> 
+#include <fcntl.h>
+#include <math.h>
+#include <cstring>
+
+using namespace std;
+
+
+
+int main( int argc, char *argv[] )
+{
+    struct termios initial_settings, new_settings;
+    int counter = 1;
+    bool flag;
+    int inFile, linesRead, readRtn;
+    char inChar[1], uInput[1];
+
+        tcgetattr(fileno(stdin), &initial_settings);
+        new_settings=initial_settings;
+        new_settings.c_lflag &= ~ICANON;
+        new_settings.c_lflag &= ~ECHO;
+        new_settings.c_cc[VMIN] = 1;
+        new_settings.c_cc[VTIME] = 0;
+        
+	if (tcsetattr(fileno(stdin), TCSANOW, &new_settings)!=0)
+        {
+             write( 1, "could not set attributes\n", 25);
+             return -1;
+        }
+
+	if ( argc == 1 )	//no command line arguements profided
+	{
+   	     write( 1, "No command line arguements provided\n", 36 );
+	}
+	else
+	{
+	    while ( counter < argc )
+        {
+            inFile = open( argv[counter], O_RDONLY );
+            if (inFile == -1)
+            {
+                write( 1, "::::::::::::::::::::::::::::::\nThe following file was not found: ", 65);
+                write( 1, ("%s", argv[counter]), ( strlen( argv[counter]) ) );
+                write( 1, "\n::::::::::::::::::::::::::::::\n", 32);
+                flag = 1;
+            //wait for user to input space
+                while ( flag )
+                {
+                    read( 0, uInput, 1);
+
+                    if ( uInput[0] == ' ' )
+                        flag = 0;
+                    if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                    {
+                        tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                        return 0;
+                    }
+                }
+            }
+            else
+            {
+                if ( argc > 2 )     //if more than one file, print file id header
+                {
+                                    while ( flag )
+                {
+                    read( 0, uInput, 1);
+
+                    if ( uInput[0] == ' ' )
+                        flag = 0;
+                    if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                    {
+                        tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                        return 0;
+                    }
+                }
+                    write( 1, "::::::::::::::::::::::::::::::\n", 31);
+                    write( 1, ("%s", argv[counter]), ( strlen( argv[counter]) ) );
+                    write( 1, "\n::::::::::::::::::::::::::::::\n", 32);
+                                            flag = 1;
+                        //wait for user to input space
+                        while ( flag )
+                        {
+                            read( 0, uInput, 1);
+
+                            if ( uInput[0] == ' ' )
+                                flag = 0;
+                            if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                            {
+                                tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                                return 0;
+                            }
+                        }  
+                }
+                linesRead = 0;
+                while ( (readRtn = read( inFile, inChar, 1 ) != 0) )
+                {
+                    if ( inChar[0] == '\n')
+                        linesRead += 1;
+                    write( 1, inChar, 1 );
+                    if ( linesRead == 20 )
+                    {
+                        flag = 1;
+                        //wait for user to input space
+                        while ( flag )
+                        {
+                            read( 0, uInput, 1);
+
+                            if ( uInput[0] == ' ' )
+                                flag = 0;
+                            if ( uInput[0] == 'q' || uInput[0] == 'Q' )
+                            {
+                                tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+                                return 0;
+                            }
+                        }    
+                        linesRead = 0;
+                    }
+                }
+                close( inFile );
+            }
+            counter += 1;
+        }   
+	}  
+    tcsetattr(fileno(stdin), TCSANOW, &initial_settings); 
+	return 0;
+}
+::::::::::::::::::::::::::::::
+/net/share/aliases/CS330-001.201330
+::::::::::::::::::::::::::::::
+liang12l@uregina.ca
+young24a@uregina.ca
+vey200@uregina.ca
+guzmanpi@uregina.ca
+ulmer22l@uregina.ca
+mcvicama@uregina.ca
+kikets2a@uregina.ca
+arnold2c@uregina.ca
+zhang29z@uregina.ca
+kreutzwj@uregina.ca
+wang205m@uregina.ca
+willikev@uregina.ca
+froese2t@uregina.ca
+prevostb@uregina.ca
+schweiad@uregina.ca
+stein22k@uregina.ca
+tourneyn@uregina.ca
+comte20m@uregina.ca
+vladynsr@uregina.ca
+euharajv@uregina.ca
+rennie2b@uregina.ca
+zhai200z@uregina.ca
+buttazda@uregina.ca
+nguyen6a@uregina.ca
+nguyen3b@uregina.ca
+xiong20h@uregina.ca
+shah200r@uregina.ca
+Script on a049403[6]% log[K[K[Kexit
+exit
+
+Script done on Sat Oct  5 14:04:27 2013

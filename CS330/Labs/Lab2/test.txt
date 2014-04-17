@@ -1,0 +1,8 @@
+This file is a test to see 
+how we can reverse the words
+on one line.
+
+Let's see how it works.
+
+Here's a long one with a quote from The Autumn of the Patriarch. Let's see if I can say it all in one breath and if your program can read it all at once: "Over the weekend the vultures got into the presidential palace by pecking through the screens on the balcony windows and the flapping of their wings stirred up the stagnant time inside, and at dawn on Monday the city awoke out of its lethargy of centuries with the warm, soft breeze of a great man dead and rotting grandeur.."
+Another line at the end just to test.

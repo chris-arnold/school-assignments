@@ -1,0 +1,19 @@
+Script started on Fri Oct 25 11:14:39 2013
+Script on a049401[1]% ls
+[0m[0mcolor.txt[0m  [0mcolorfile.txt[0m  [0mmain.c[0m  [0mpart1.txt[0m  [0mpart3.log[0m
+[mScript on a049401[2]% g++ mail[Kn.c
+Script on a049401[3]% ./a.out
+Script on a049401[4]% cat newfile.txt 
+This is an example file
+testing the use of grep and sed.
+Sed will modify the spelling of colour.
+Red colour, blue colour, green colour, orange colour.
+Grep will display specific lines.  
+This is for our pipes lab.
+Pipes provide the user with a synchronized means of
+interprocess communication.
+Two kinds of pipes exist: named or unnamed.
+Script on a049401[5]% exit
+exit
+
+Script done on Fri Oct 25 11:14:52 2013

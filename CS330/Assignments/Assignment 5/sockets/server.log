@@ -1,0 +1,182 @@
+Script started on Sat Nov 30 15:39:19 2013
+Script on a049418[1]% ls
+[0m[01;32mMakefile[0m*  [0mps.txt[0m  [01;32mserver[0m*  [0mserver.log[0m  [0msocketClient.c[0m  [0msocketInclude.h[0m  [0msocketServer.c[0m
+[mScript on a049418[2]% make server
+make: `server' is up to date.
+Script on a049418[3]% cat ps.txt
+  PID TTY          TIME CMD
+    1 ?        00:00:18 init
+    2 ?        00:00:00 migration/0
+    3 ?        00:00:00 ksoftirqd/0
+    4 ?        00:00:00 watchdog/0
+    5 ?        00:00:00 migration/1
+    6 ?        00:00:00 ksoftirqd/1
+    7 ?        00:00:00 watchdog/1
+    8 ?        00:00:00 events/0
+    9 ?        00:00:00 events/1
+   10 ?        00:00:00 khelper
+   46 ?        00:00:00 kthread
+   51 ?        00:00:00 kblockd/0
+   52 ?        00:00:00 kblockd/1
+   53 ?        00:00:00 kacpid
+  135 ?        00:00:00 cqueue/0
+  136 ?        00:00:00 cqueue/1
+  139 ?        00:00:00 khubd
+  141 ?        00:00:00 kseriod
+  215 ?        00:00:00 khungtaskd
+  218 ?        00:00:00 kswapd0
+  219 ?        00:00:00 aio/0
+  220 ?        00:00:00 aio/1
+  345 pts/1    00:00:00 ps
+  372 ?        00:00:00 kpsmoused
+  404 ?        00:00:02 ata/0
+  405 ?        00:00:57 ata/1
+  406 ?        00:00:00 ata_aux
+  410 ?        00:00:00 scsi_eh_0
+  411 ?        00:00:15 scsi_eh_1
+  412 ?        00:00:00 scsi_eh_2
+  413 ?        00:00:00 scsi_eh_3
+  420 ?        00:00:00 kstriped
+  433 ?        00:00:01 kjournald
+  458 ?        00:00:00 kauditd
+  491 ?        00:00:00 udevd
+ 1239 ?        00:00:00 hd-audio0
+ 1820 ?        00:00:00 kmpathd/0
+ 1821 ?        00:00:00 kmpathd/1
+ 1822 ?        00:00:00 kmpath_handlerd
+ 1851 ?        00:00:00 kjournald
+ 1853 ?        00:00:00 kjournald
+ 1855 ?        00:00:00 kjournald
+ 1857 ?        00:00:04 kjournald
+ 1859 ?        00:00:00 kjournald
+ 2246 ?        00:00:00 dhclient
+ 2312 ?        00:00:00 syslogd
+ 2315 ?        00:00:00 klogd
+ 2360 ?        00:00:00 kondemand/0
+ 2361 ?        00:00:00 kondemand/1
+ 2400 ?        00:00:00 portmap
+ 2435 ?        00:00:00 rpciod/0
+ 2436 ?        00:00:07 rpciod/1
+ 2443 ?        00:00:00 rpc.statd
+ 2457 ?        00:00:01 dbus-daemon
+ 2493 ?        00:00:00 acpid
+ 2506 ?        00:00:02 hald
+ 2507 ?        00:00:00 hald-runner
+ 2514 ?        00:00:00 hald-addon-acpi
+ 2516 ?        00:00:00 hald-addon-keyb
+ 2527 ?        00:00:00 hald-addon-keyb
+ 2531 ?        00:01:32 hald-addon-stor
+ 2575 ?        00:00:01 automount
+ 2592 ?        00:00:00 lpd
+ 2608 ?        00:00:00 sshd
+ 2624 ?        00:00:00 xinetd
+ 2643 ?        00:00:00 ntpd
+ 2660 ?        00:00:00 gpm
+ 2673 ?        00:00:00 crond
+ 2708 ?        00:00:00 xfs
+ 2721 ?        00:00:00 atd
+ 2805 tty1     00:00:00 mingetty
+ 2806 tty2     00:00:00 mingetty
+ 2808 tty3     00:00:00 mingetty
+ 2810 tty4     00:00:00 mingetty
+ 2813 tty5     00:00:00 mingetty
+ 2816 tty6     00:00:00 mingetty
+ 2819 ?        00:00:00 gdm-binary
+ 2858 ?        00:00:00 UnMount
+ 2869 ?        00:00:15 GetLogin
+ 2903 ?        00:00:14 nfsiod
+ 2905 ?        00:00:00 lockd
+ 2906 ?        00:00:08 GetConfig
+ 2926 ?        00:00:01 gdm-binary
+ 2929 ?        00:00:00 gdm-rh-security
+ 3274 ?        00:00:00 nm-system-setti
+ 4924 ?        00:00:00 bonobo-activati
+15549 ?        00:00:00 bonobo-activati
+21959 ?        00:00:00 pdflush
+21982 ?        00:00:03 pdflush
+30782 tty8     00:30:48 Xorg
+30784 ?        00:00:00 firegl
+30785 ?        00:00:00 firegl
+30786 ?        00:00:00 firegl
+31211 ?        00:00:00 tcsh
+31284 ?        00:00:00 .xsession
+31287 ?        00:00:00 dbus-launch
+31288 ?        00:00:00 dbus-daemon
+31292 ?        00:00:00 gnome-session
+31294 ?        00:00:00 gconfd-2
+31297 ?        00:00:00 gnome-keyring-d
+31299 ?        00:00:00 gnome-settings-
+31319 ?        00:00:00 bonobo-activati
+31325 ?        00:00:03 metacity
+31326 ?        00:00:04 vino-server
+31330 ?        00:00:01 gnome-panel
+31332 ?        00:00:02 nautilus
+31336 ?        00:00:00 eggcups
+31340 ?        00:00:00 gnome-volume-ma
+31343 ?        00:00:00 gnome-vfs-daemo
+31356 ?        00:00:05 gam_server
+31367 ?        00:00:00 bt-applet
+31372 ?        00:00:00 nm-applet
+31378 ?        00:00:02 wnck-applet
+31380 ?        00:00:00 trashapplet
+31382 ?        00:00:00 pam-panel-icon
+31385 ?        00:00:00 escd
+31399 ?        00:00:00 gnome-power-man
+31401 ?        00:00:00 mapping-daemon
+31406 ?        00:00:00 notification-ar
+31407 ?        00:00:00 pam_timestamp_c
+31409 ?        00:00:00 clock-applet
+31411 ?        00:00:00 mixer_applet2
+31422 ?        00:01:30 firefox
+31451 ?        00:00:00 firefox <defunct>
+31480 ?        00:00:00 eclipse-php
+31524 ?        00:00:01 gnome-screensav
+31540 ?        00:00:00 gnome-terminal
+31542 ?        00:00:00 gnome-pty-helpe
+31543 pts/0    00:00:00 tcsh
+31710 ?        00:00:00 evolution-data-
+31714 ?        00:00:00 evolution-excha
+32034 ?        00:01:16 java
+32371 ?        00:00:00 plugin-containe
+32383 ?        00:00:00 npviewer.bin
+32518 ?        00:00:00 sshd
+32519 pts/1    00:00:00 tcsh
+Script on a049418[4]% server
+Parent: Server on port 4259
+Parent: Waiting for client
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Command listdir recieved.
+Sending file.... File transfer complete. 92 bytes were sent.
+Request to send ps.txt recieved.
+Sending file.... File transfer complete. 4669 bytes were sent.
+Child: Done
+Parent: Client arrived
+Child: Fork OK
+Parent: Waiting for client
+Command listdir recieved.
+Sending file.... File transfer complete. 92 bytes were sent.
+Request to send ps.txt recieved.
+Sending file.... File transfer complete. 4669 bytes were sent.
+Request to send notafile recieved.
+Error opening file notafile
+Error removing file doesnotexist
+Request to create wc.txt recieved.
+Request to create picture.png recieved.
+Request to create picture.png recieved.
+Command listdir recieved.
+Sending file.... File transfer complete. 140 bytes were sent.
+Successfully removed file picture.png
+Command listdir recieved.
+Sending file.... File transfer complete. 186 bytes were sent.
+Child: Done
+
+Script on a049418[5]% ls
+[0m[01;32mMakefile[0m*  [0mps.txt[0m  [01;32mserver[0m*  [0mserver.log[0m  [0msocketClient.c[0m  [0msocketInclude.h[0m  [0msocketServer.c[0m  [0mwc.txt[0m
+[mScript on a049418[6]% cat wc.p[Ktxt 
+    103     412    3423
+Script on a049418[7]% exit
+exit
+
+Script done on Sat Nov 30 15:50:52 2013

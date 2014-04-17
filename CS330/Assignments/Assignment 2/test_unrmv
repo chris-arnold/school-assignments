@@ -1,0 +1,27 @@
+#!/bin/sh -v
+
+ls ~/trash
+
+ls here
+
+ls
+
+./unrmv -h
+
+./unrmv -g
+
+./unrmv file1 -c -a
+
+./unrmv file2 -a -c
+
+./unrmv -c file3 -a here
+
+./unrmv -a file4
+
+./unrmv -c
+
+./unrmv -a
+
+ls ~/trash
+
+ls here

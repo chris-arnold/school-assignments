@@ -1,0 +1,7 @@
+training_set = [((1,0,0), 0), ((1,0,1), 1), ((1,1,0), 1), ((1,1,1), 1)]
+#training_set = [((1,0,0), 0), ((1,0,1), 0), ((1,1,0), 0), ((1,1,1), 1)]
+
+weight = [0,0,0]
+
+def dot_product(values, weights):
+	return sum(value * weight for value, weight in zip(values,weights))

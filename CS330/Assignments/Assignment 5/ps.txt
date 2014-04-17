@@ -1,0 +1,8 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+chris     3334  0.0  1.2   9944  6388 pts/0    Ss+  Nov19   0:01 -bash
+chris     7275  0.0  1.2   9940  6380 pts/2    Ss+  Nov20   0:00 -bash
+chris     9866  0.0  1.2   9940  6380 pts/3    Ss   10:16   0:00 -bash
+chris    10293  0.0  1.2   9936  6372 pts/4    Ss   10:29   0:00 -bash
+chris    10484  0.0  0.1   2192   584 pts/3    S+   10:52   0:00 ./server
+chris    10486  0.0  0.0      0     0 pts/3    Z+   10:52   0:00 [server] <defunct>
+chris    10496  0.0  0.2   4936  1140 pts/4    R+   10:53   0:00 ps u

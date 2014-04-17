@@ -1,0 +1,15 @@
+#!/bin/sh -v
+
+./rmv file*
+
+ls ~/trash
+
+./empty -h
+
+./empty -c
+
+./empty
+
+ls ~/trash
+
+ls

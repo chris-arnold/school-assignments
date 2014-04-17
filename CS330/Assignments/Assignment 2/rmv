@@ -1,0 +1,113 @@
+#!/bin/bash
+
+#BASH Script for CS330 Assignment 2
+cflag=false
+aflag=false
+seta=-999				#location in list that set a flag. for determining altdir info
+counter=0
+files=()
+dest="$HOME/trash"
+
+
+if [ $# -eq 0 ]; then
+	echo "rmv removes a file to a trash can."
+	echo "Usage is: rmv <file_1> [<file_2> ... <file_n>] [-a alternate_directory] [- c]"
+	exit 1
+fi
+
+for i in $*; do
+	let counter=counter+1
+	case $i in
+		-c)
+			cflag=true
+			;;
+		-a)
+			aflag=true
+			seta=$counter
+			;;
+		-h)
+			echo "rmv removes a file to a trash can."
+			echo "Usage is: rmv <file_1> [<file_2> ... <file_n>] [-a alternate_directory] [- c]"
+			exit 1
+			;;
+		*)
+			if [ -d $i ]; then
+				if [ $(($counter-1)) == $seta ]; then	#if dir and after -a its altdir
+					altdir=$i
+				else	#if dir not after -a error as will not del dir
+					echo $i is directory. rmv will not delete a directory. Use -h 'for' usage details.
+					exit 1
+				fi
+			elif [ -f $i ]; then	#if its file, add to file list
+				files+=($i)
+			else
+				if [ $((counter-1)) == $seta ]; then		#not file or dir and after -a, set as dir
+						altdir=$i
+				else
+					echo ERROR\! Unknown option $i.
+					exit 1
+				fi
+			fi
+			;;
+	esac
+done
+
+if [ ${#files[@]} == 0 ]; then
+	echo Must enter at least one file to delete. -h 'for' usage details.
+	exit 1
+fi
+
+if [ ! -d $dest ]; then
+	mkdir $dest
+fi
+
+if [[ $aflag == 'true' ]]; then		#check alternate directory validity
+	if [[ $altdir == "" ]]; then
+		read -p "Enter an alternate directory: " altdir
+	fi
+	if [ -d $altdir ]; then
+		dest=$altdir
+	else
+		mkdir -p $altdir 2>/dev/null
+		if [ $? == 0 ]; then
+			dest=$altdir
+		else
+			echo ERROR\! Could not make directory $altdir.
+			exit 1
+		fi
+	fi
+fi
+
+for i in ${files[@]}; do
+	if [ $i == "rmv" ]; then
+		break
+	fi
+	if [ $cflag == 'true' ]; then
+		while :
+		do
+			read -n1 -p "Are you sure you wish to delete $i [y/n]: " resp
+			case $resp in
+				y|Y)
+					echo;echo Deleting $i
+					mv $i $dest
+					break
+					;;
+				n|N)
+					echo;echo Keeping $i
+					break
+					;;
+				q|Q)
+					echo;echo Quitting program
+					exit 1
+					;;
+				*)
+					echo;echo Invalid input
+					;;
+			esac
+		done	
+
+	else
+		echo Deleting $i
+		mv $i $dest
+	fi
+done

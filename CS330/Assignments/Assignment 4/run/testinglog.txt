@@ -1,0 +1,166 @@
+chris@Hydra:~$ cd CS330/
+chris@Hydra:~/CS330$ cd Assignments/Assignment\ 4/run/
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ls
+colorfile.txt  myshellfunctions.c  myshell.o    run            test.txt
+Makefile       myshellfunctions.h  newfile.txt  sleep.txt      wc
+myshell.c      myshellfunctions.o  out.txt      testcases.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ make clean
+rm -f *.o run
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ls
+colorfile.txt  myshell.c           myshellfunctions.h  out.txt    testcases.txt  wc
+Makefile       myshellfunctions.c  newfile.txt         sleep.txt  test.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ rm wc sleep.txt out.txt newfile.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ls
+colorfile.txt  myshell.c           myshellfunctions.h  test.txt
+Makefile       myshellfunctions.c  testcases.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ script runtest.log
+Script started, file is runtest.log
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ make install
+g++ -c -g myshell.c
+g++ -c -g myshellfunctions.c
+g++ myshell.o myshellfunctions.o -o run
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run ls @ wc -l
+11
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run cat [ test.txt
+This is a test file.
+It should  be printed back out.
+Booh yeah.
+Here is some more text.
+And this is the last line!
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run ls ] lsout.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ cat lsout.txt
+colorfile.txt
+lsout.txt
+Makefile
+myshell.c
+myshellfunctions.c
+myshellfunctions.h
+myshellfunctions.o
+myshell.o
+run
+runtest.log
+testcases.txt
+test.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run wc [ test.txt ] wc.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ cat wc.txt
+  5  24 115
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run cat [ test.txt ] catout.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ cat catout.txt
+This is a test file.
+It should  be printed back out.
+Booh yeah.
+Here is some more text.
+And this is the last line!
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run cat [ test.txt @ wc
+      5      24     115
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run ps -A @ wc ] ps.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ cat ps.txt
+    111     444    3662
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run cat [ colorfile.txt @ sed -e "s/color/COLOUR/g" ] newfile.txt
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ cat newfile.txt
+This is an example file
+testing the use of grep and sed.
+Sed will modify the spelling of COLOUR.
+Red COLOUR, blue COLOUR, green COLOUR, orange COLOUR.
+Grep will display specific lines.  
+This is for our pipes lab.
+Pipes provide the user with a synchronized means of
+interprocess communication.
+Two kinds of pipes exist: named or unnamed.
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ./run
+[1]==>ls
+colorfile.txt  myshell.c	   myshellfunctions.h  myshell.o  testcases.txt
+Makefile       myshellfunctions.c  myshellfunctions.o  run	  test.txt
+[2]==>ls -wc -l
+ls: invalid line width: c
+[3]==>ls @ wc -l
+10
+[4]==>cat [ test.txt
+This is a test file.
+It should  be printed back out.
+Booh yeah.
+Here is some more text.
+And this is the last line!
+[5]==>ls ] lsout.txt
+[6]==>cat lsout.txt
+colorfile.txt
+lsout.txt
+Makefile
+myshell.c
+myshellfunctions.c
+myshellfunctions.h
+myshellfunctions.o
+myshell.o
+run
+testcases.txt
+test.txt
+[7]==>wc [ test.txt ] wc.txt
+[8]==>cat wc.txt
+  5  24 115
+[9]==>cat [ test.txt ] catout.txt
+[10]==>cat catout.txt
+This is a test file.
+It should  be printed back out.
+Booh yeah.
+Here is some more text.
+And this is the last line!
+[11]==>cat [ test.txt @ wc
+      5      24     115
+[12]==>ps -A @ wc ] ps.txt
+[13]==>cat ps.txt
+    109     436    3604
+[14]==>cat [ colorfile.txt @ sed -e "s/color/COLOUR/g" ] newfile.txt
+sed: -e expression #1, char 1: unknown command: `"'
+[15]==>cat [ colorfile.txt @ sed -e s/color/COLOUR/g ] newfile.txt
+[16]==>cat newfile.txt
+This is an example file
+testing the use of grep and sed.
+Sed will modify the spelling of COLOUR.
+Red COLOUR, blue COLOUR, green COLOUR, orange COLOUR.
+Grep will display specific lines.  
+This is for our pipes lab.
+Pipes provide the user with a synchronized means of
+interprocess communication.
+Two kinds of pipes exist: named or unnamed.
+[17]==>sleep 15 ] sleep.txt &
+Executing in background: 23533
+[18]==>sleep 10 &
+[19]==>Executing in background: 23619
+sleep 15 @ wc &
+Executing in background: 23533
+[20]==>bg
+Background Processes:
+[1] 23616
+[2] 23618
+[3] 23620
+[21]==>
+[21]==>
+Background process 23619 Complete
+BG Command 23616 finished.
+BG Command 23620 finished.
+      0       0       0
+
+[21]==>bg
+Background Processes:
+[1] 23618
+[22]==>bg
+There are no active background processes!
+[23]==>exit
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ quit
+No command 'quit' found, did you mean:
+ Command 'quilt' from package 'quilt' (main)
+ Command 'luit' from package 'x11-utils' (main)
+ Command 'quot' from package 'quota' (main)
+ Command 'quiz' from package 'bsdgames' (universe)
+ Command 'qgit' from package 'qgit' (universe)
+quit: command not found
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ exit
+exit
+Script done, file is runtest.log
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ cat runtest.log
+cat: runtest.log: No such file or directory
+chris@Hydra:~/CS330/Assignments/Assignment 4/run$ ls
+catout.txt     Makefile            myshellfunctions.h  newfile.txt  sleep.txt      wc.txt
+colorfile.txt  myshell.c           myshellfunctions.o  ps.txt       testcases.txt
+lsout.txt      myshellfunctions.c  myshell.o           run          test.txt
+

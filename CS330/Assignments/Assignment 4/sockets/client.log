@@ -1,0 +1,44 @@
+Script started on Mon 11 Nov 2013 03:47:11 PM CST
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 4/sockets[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 4/sockets[00m$ exit./client 142.3.169.6gcc socketClient.c socketInclude.h -o  client
+socketClient.c: In function ‘main’:
+socketClient.c:85:4: warning: format ‘%s’ expects argument of type ‘char *’, but argument 5 has type ‘int’ [-Wformat]
+socketClient.c:137:4: warning: format ‘%s’ expects argument of type ‘char *’, but argument 5 has type ‘int’ [-Wformat]
+socketClient.c: In function ‘send_message’:
+socketClient.c:161:33: warning: comparison between pointer and integer [enabled by default]
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 4/sockets[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 4/sockets[00m$ gcc socketClient.c socketInclude.h -o  client[A]0;chris@Hydra: ~/CS330/Assignments/Assignment 4/sockets[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 4/sockets[00m$ exit[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./client 142.3.169.6
+Socket client started on Hydra.gateway.2wire.net (IP address = 127.0.1.1, PID = 11519) at Mon Nov 11 15:47:17 2013
+l 
+listdir
+Roger that Client. Ready to issue command LISTDIR.
+
+rmvfile
+Not enough arguements
+rmvfile die.txt
+Roger that Client. Ready to issue command rmvfile.
+
+getfile
+Not enough arguements
+getfile iwantthisfile
+Roger that Client. Ready to issue command getfile.
+
+putfile
+Error opening file (null)
+putfile afiel  le.txt
+Error opening file afile.txt
+putfile test.txt
+Open test.txt is okay. Can do stuff to send it.
+Roger that Client. Ready to issue command putfile.
+
+randomljsfdlasodfh
+Unknown input.
+
+exit
+Socket client on Hydra.gateway.2wire.net (IP address = 127.0.1.1, PID = 11519) ended at Mon Nov 11 15:48:44 2013
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 4/sockets[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 4/sockets[00m$ ls
+[0m[01;32ma.out[0m   client.log  [01;32mserver[0m          socketInclude.h  test.txt
+[01;32mclient[0m  [01;32mmacclient[0m   socketClient.c  socketServer.c
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 4/sockets[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 4/sockets[00m$ exit
+exit
+
+Script done on Mon 11 Nov 2013 03:49:41 PM CST

@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#empty in format empty [-c]
+
+about="empty empties the default trash directory, which is the following: $HOME/trash"
+usage="Usage: empty [-c]"
+start=`pwd`
+
+cflag=false
+
+for i in $*; do
+	let counter=counter+1
+	case $i in
+		-c)
+			cflag=true
+			;;
+		-h)
+			echo $about
+			echo $usage
+			exit 1
+			;;
+		*)
+			echo "Unknown option $i entered. Please use -h for usage details."
+			exit 1
+			;;
+	esac
+done
+
+cd $HOME/trash
+
+for i in `ls`; do
+	if [ -f $i ]; then
+		if [ $i == "empty" ]; then
+			break
+		fi
+		if [ $cflag == 'true' ]; then
+			while :
+			do
+				read -n1 -p "Are you sure you wish to permanently delete $i [y/n]: " resp
+				case $resp in
+					y|Y)
+						echo;echo Permanently Deleting $i
+						rm -f $HOME/trash/$i
+						break
+						;;
+					n|N)
+						echo;echo Keeping $i
+						break
+						;;
+					q|Q)
+						echo;echo Quitting program
+						exit 1
+						;;
+					*)
+						echo;echo Invalid Input
+						;;
+				esac
+			done	
+
+		else
+			echo Permanently Deleting $i
+			rm -f $HOME/trash/$i
+		fi
+	fi
+done
+
+cd "$start"

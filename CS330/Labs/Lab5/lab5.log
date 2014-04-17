@@ -1,0 +1,117 @@
+Script started on Fri 11 Oct 2013 06:33:44 PM CST
+]0;chris@Hydra: ~/CS330/Labs/Lab5[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab5[00m$ g++ myfork.c 
+]0;chris@Hydra: ~/CS330/Labs/Lab5[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab5[00m$ ./a.out myfork.c
+In the CHILD process
+Child Process ID: 15201, Parent ID: 15200, Process Group: 15200
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <errno.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int main ( int argc, char *argv[] )
+{
+	pid_t fork_id;
+	int status;
+
+	if( argc != 2 )
+	{
+		printf("Must enter one command line arguement to cat\n");
+		exit(0);
+	}
+
+	fork_id = fork();
+
+	if ( fork_id == 0 )
+	{
+
+		printf("In the CHILD process\n");
+		printf("Child Process ID: %d, Parent ID: %d, Process Group: %d\n", getpid(), getppid(), getpgrp());
+
+		
+		execl( "/bin/cat\0", "/usr/bin/cat -b -v -t\0", argv[1], NULL );
+		perror("exec failure");
+		exit(1);
+		
+
+		/*
+		char *cmd[] = { (char*)"cat", (char*) "-b", (char*)"-v", (char*)"-t" , argv[1], (char*)0 };
+		execv( "/bin/cat", cmd);
+		perror("exec failure");
+		exit(1);
+		*/
+	}
+	else
+	{
+		wait(&status);
+		printf("In the PARENT process\n");
+		printf("Original Process ID: %d, Parent ID: %d, Process Group: %d\n", getpid(), getppid(), getpgrp());
+	}
+
+}
+In the PARENT process
+Original Process ID: 15200, Parent ID: 15136, Process Group: 15200
+]0;chris@Hydra: ~/CS330/Labs/Lab5[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab5[00m$ g++ myfork.c 
+]0;chris@Hydra: ~/CS330/Labs/Lab5[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab5[00m$ ./a.ot[Kit[K[Kut myfork.c 
+In the CHILD process
+Child Process ID: 15212, Parent ID: 15211, Process Group: 15211
+     1	#include <stdio.h>
+     2	#include <sys/types.h>
+     3	#include <unistd.h>
+     4	#include <errno.h>
+     5	#include <string.h>
+     6	#include <sys/wait.h>
+     7	#include <stdlib.h>
+
+     8	using namespace std;
+
+     9	int main ( int argc, char *argv[] )
+    10	{
+    11	^Ipid_t fork_id;
+    12	^Iint status;
+
+    13	^Iif( argc != 2 )
+    14	^I{
+    15	^I^Iprintf("Must enter one command line arguement to cat\n");
+    16	^I^Iexit(0);
+    17	^I}
+
+    18	^Ifork_id = fork();
+
+    19	^Iif ( fork_id == 0 )
+    20	^I{
+
+    21	^I^Iprintf("In the CHILD process\n");
+    22	^I^Iprintf("Child Process ID: %d, Parent ID: %d, Process Group: %d\n", getpid(), getppid(), getpgrp());
+
+    23	^I^I/*
+    24	^I^Iexecl( "/bin/cat\0", "/usr/bin/cat -b -v -t\0", argv[1], NULL );
+    25	^I^Iperror("exec failure");
+    26	^I^Iexit(1);
+    27	^I^I*/
+
+    28	^I^I
+    29	^I^Ichar *cmd[] = { (char*)"cat", (char*) "-b", (char*)"-v", (char*)"-t" , argv[1], (char*)0 };
+    30	^I^Iexecv( "/bin/cat", cmd);
+    31	^I^Iperror("exec failure");
+    32	^I^Iexit(1);
+    33	^I^I
+    34	^I}
+    35	^Ielse
+    36	^I{
+    37	^I^Iwait(&status);
+    38	^I^Iprintf("In the PARENT process\n");
+    39	^I^Iprintf("Original Process ID: %d, Parent ID: %d, Process Group: %d\n", getpid(), getppid(), getpgrp());
+    40	^I}
+
+    41	}
+In the PARENT process
+Original Process ID: 15211, Parent ID: 15136, Process Group: 15211
+]0;chris@Hydra: ~/CS330/Labs/Lab5[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab5[00m$ exit
+exit
+
+Script done on Fri 11 Oct 2013 06:34:39 PM CST

@@ -1,0 +1,27 @@
+Script started on Tue 12 Nov 2013 01:39:43 PM CST
+]0;chris@Hydra: ~/CS330/Labs/Lab8[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab8[00m$ g++ exercise.cpp -o exercise
+]0;chris@Hydra: ~/CS330/Labs/Lab8[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab8[00m$ ./exercise 1
+B. The number [ 1] modified by child 
+A. The number [ 2] modified by parent
+B. The number [ 3] modified by child 
+A. The number [ 4] modified by parent
+B. The number [ 5] modified by child 
+A. The number [ 6] modified by parent
+B. The number [ 7] modified by child 
+A. The number [ 8] modified by parent
+B. The number [ 9] modified by child 
+A. The number [10] modified by parent
+Semaphore removed
+semop -- parent -- waiting for consumer to WRITE number: Identifier removed
+]0;chris@Hydra: ~/CS330/Labs/Lab8[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab8[00m$ quit
+No command 'quit' found, did you mean:
+ Command 'quilt' from package 'quilt' (main)
+ Command 'luit' from package 'x11-utils' (main)
+ Command 'quot' from package 'quota' (main)
+ Command 'quiz' from package 'bsdgames' (universe)
+ Command 'qgit' from package 'qgit' (universe)
+quit: command not found
+]0;chris@Hydra: ~/CS330/Labs/Lab8[01;32mchris@Hydra[00m:[01;34m~/CS330/Labs/Lab8[00m$ exit
+exit
+
+Script done on Tue 12 Nov 2013 01:40:17 PM CST

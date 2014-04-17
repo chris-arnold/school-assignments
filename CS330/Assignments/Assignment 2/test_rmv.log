@@ -1,0 +1,83 @@
+Script started on Sat 28 Sep 2013 03:00:30 PM CST
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 2[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 2[00m$ ./test_rmv 
+#!/bin/sh -v
+
+touch file1 file2 file3 file4 file5 file6 file7 file8 file9 file10
+
+ls
+empty  file10  file3  file5  file7  file9  test_empty  test_rmv.log  unrmv
+file1  file2   file4  file6  file8  rmv    test_rmv    test_unrmv
+
+./rmv
+rmv removes a file to a trash can.
+Usage is: rmv <file_1> [<file_2> ... <file_n>] [-a alternate_directory] [- c]
+
+ls ~
+Conversions  CS330  scriptlog.txt  Scripts
+
+./rmv -h
+rmv removes a file to a trash can.
+Usage is: rmv <file_1> [<file_2> ... <file_n>] [-a alternate_directory] [- c]
+
+./rmv -c file1 
+Are you sure you wish to delete file1 [y/n]: s
+Invalid input
+Are you sure you wish to delete file1 [y/n]: m
+Invalid input
+Are you sure you wish to delete file1 [y/n]: q
+Quitting program
+
+./rmv file2 -a here file9
+Deleting file2
+Deleting file9
+
+./rmv file3 -a
+Enter an alternate directory: here
+Deleting file3
+
+./rmv file4 -c -a here
+Are you sure you wish to delete file4 [y/n]: n
+Keeping file4
+
+./rmv file5 file6 -c file7 -a file8
+Enter an alternate directory: here
+Are you sure you wish to delete file5 [y/n]: y
+Deleting file5
+Are you sure you wish to delete file6 [y/n]: n
+Keeping file6
+Are you sure you wish to delete file7 [y/n]: n
+Keeping file7
+Are you sure you wish to delete file8 [y/n]: y
+Deleting file8
+
+./rmv file10
+Deleting file10
+
+./rmv * -c
+here is directory. rmv will not delete a directory. Use -h for usage details.
+
+./rmv file* -c
+Are you sure you wish to delete file1 [y/n]: y
+Deleting file1
+Are you sure you wish to delete file4 [y/n]: y
+Deleting file4
+Are you sure you wish to delete file6 [y/n]: p
+Invalid input
+Are you sure you wish to delete file6 [y/n]: y
+Deleting file6
+Are you sure you wish to delete file7 [y/n]: y
+Deleting file7
+
+ls
+empty  here  rmv  test_empty  test_rmv	test_rmv.log  test_unrmv  unrmv
+
+ls ~/trash
+file1  file10  file4  file6  file7
+
+ls here
+file2  file3  file5  file8  file9
+
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 2[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 2[00m$ exit
+exit
+
+Script done on Sat 28 Sep 2013 03:01:27 PM CST

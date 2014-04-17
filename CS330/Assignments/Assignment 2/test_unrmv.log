@@ -1,0 +1,69 @@
+Script started on Sat 28 Sep 2013 03:01:32 PM CST
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 2[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 2[00m$ ./test_unrmv 
+#!/bin/sh -v
+
+ls ~/trash
+file1  file10  file4  file6  file7
+
+ls here
+file2  file3  file5  file8  file9
+
+ls
+empty  rmv	   test_rmv	 test_unrmv	 unrmv
+here   test_empty  test_rmv.log  test_unrmv.log
+
+./unrmv -h
+rmv removes a file to a trash can.
+Usage is: rmv <file_1> [<file_2> ... <file_n>] [-a alternate_directory] [- c]
+
+./unrmv -g
+File -g doesn not exist.
+
+./unrmv file1 -c -a
+Enter an alternate directory: here
+File file1 doesn not exist.
+
+./unrmv file2 -a -c
+Enter an alternate directory: here
+Are you sure you wish to restore file2 [y/n]: p
+Invalid Input
+Are you sure you wish to restore file2 [y/n]: p
+Invalid Input
+Are you sure you wish to restore file2 [y/n]: q
+Quitting program
+
+./unrmv -c file3 -a here
+Are you sure you wish to restore file3 [y/n]: y
+Restoring file3
+
+./unrmv -a file4
+Enter an alternate directory: junk
+Specified alternate directory junk could not be found.
+
+./unrmv -c
+Are you sure you wish to restore file1 [y/n]: y
+Restoring file1
+Are you sure you wish to restore file10 [y/n]: n
+Not Restoring file10
+Are you sure you wish to restore file4 [y/n]: y
+Restoring file4
+Are you sure you wish to restore file6 [y/n]: y
+Restoring file6
+Are you sure you wish to restore file7 [y/n]: y
+Restoring file7
+
+./unrmv -a
+Enter an alternate directory: here
+Restoring file2
+Restoring file5
+Restoring file8
+Restoring file9
+
+ls ~/trash
+file10
+
+ls here
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 2[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 2[00m$ exit
+exit
+
+Script done on Sat 28 Sep 2013 03:02:56 PM CST

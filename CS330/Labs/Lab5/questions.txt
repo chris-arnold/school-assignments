@@ -1,0 +1,15 @@
+Answer the following questions:
+If you try to print a message after the exec* call, does it print it? Why? Why not? No. The exec call replaces the file with the new one specified in exec and will not execute past that line.
+
+Who is the parent of your executable (myfork) program? Your shell.
+
+How would you change the code so that the child and parent run concurrently? Remove the wait() function call. It would then be upto the scheduler to determine which one executes first.
+
+
+Notice that mynum is a global variable.
+Child is incrementing the ascii value of mynum
+Parent is not
+Child and Parent can take turns running
+Why does child print CHILD0, CHILD1, CHILD2, etc whereas parent prints PARENT0, PARENT0, PARENT0, etc? Remember mynum is a global variable.
+
+Upon forking the new process gets its own copy of the memory to edit. Therefore what happens in the parent is separate from what happenes in the child.

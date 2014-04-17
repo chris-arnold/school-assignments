@@ -1,0 +1,53 @@
+Script started on Sat 28 Sep 2013 03:03:04 PM CST
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 2[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 2[00m$ ./test_empty 
+#!/bin/sh -v
+
+./rmv file*
+Deleting file1
+Deleting file2
+Deleting file3
+Deleting file4
+Deleting file5
+Deleting file6
+Deleting file7
+Deleting file8
+Deleting file9
+
+ls ~/trash
+file1  file10  file2  file3  file4  file5  file6  file7  file8	file9
+
+./empty -h
+empty empties the default trash directory, which is the following: /home/chris/trash
+Usage: empty [-c]
+
+./empty -c
+Are you sure you wish to permanently delete file1 [y/n]: y
+Permanently Deleting file1
+Are you sure you wish to permanently delete file10 [y/n]: p
+Invalid Input
+Are you sure you wish to permanently delete file10 [y/n]: o
+Invalid Input
+Are you sure you wish to permanently delete file10 [y/n]: n
+Keeping file10
+Are you sure you wish to permanently delete file2 [y/n]: q
+Quitting program
+
+./empty
+Permanently Deleting file10
+Permanently Deleting file2
+Permanently Deleting file3
+Permanently Deleting file4
+Permanently Deleting file5
+Permanently Deleting file6
+Permanently Deleting file7
+Permanently Deleting file8
+Permanently Deleting file9
+
+ls ~/trash
+
+lsempty  rmv	   test_empty.log  test_rmv.log  test_unrmv.log
+here   test_empty  test_rmv	   test_unrmv	 unrmv
+]0;chris@Hydra: ~/CS330/Assignments/Assignment 2[01;32mchris@Hydra[00m:[01;34m~/CS330/Assignments/Assignment 2[00m$ exit
+exit
+
+Script done on Sat 28 Sep 2013 03:04:11 PM CST
