@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "myTimer", "myTimer\myTimer.vcxproj", "{E7CB9C15-77FF-4174-AAAE-80D7AAFE4F09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7CB9C15-77FF-4174-AAAE-80D7AAFE4F09}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E7CB9C15-77FF-4174-AAAE-80D7AAFE4F09}.Debug|Win32.Build.0 = Debug|Win32
+		{E7CB9C15-77FF-4174-AAAE-80D7AAFE4F09}.Release|Win32.ActiveCfg = Release|Win32
+		{E7CB9C15-77FF-4174-AAAE-80D7AAFE4F09}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

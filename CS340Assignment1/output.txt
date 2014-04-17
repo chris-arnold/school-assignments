@@ -1,0 +1,111 @@
+-bash: ./a.out: No such file or directory
+Insert the number n: 
+Input n is: 10
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 30
+Value of n / result: 0.333333
+Value of n*log2(n) / result: 1.10731
+Value of pow(n,1.5) / result: 1.05409
+Value of timeUsed: 5
+Value of n / timeUsed: 2
+Value of n*log2(n) / timeUsed: 6.64386
+Value of pow(n,1.5) / timeUsed: 6.32456
+Insert the number n: 
+Input n is: 1000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 9000
+Value of n / result: 0.111111
+Value of n*log2(n) / result: 1.10731
+Value of pow(n,1.5) / result: 3.51364
+Value of timeUsed: 273
+Value of n / timeUsed: 3.663
+Value of n*log2(n) / timeUsed: 36.5047
+Value of pow(n,1.5) / timeUsed: 115.834
+Insert the number n: 
+Input n is: 10000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 130000
+Value of n / result: 0.0769231
+Value of n*log2(n) / result: 1.02213
+Value of pow(n,1.5) / result: 7.69231
+Value of timeUsed: 2365
+Value of n / timeUsed: 4.22833
+Value of n*log2(n) / timeUsed: 56.1848
+Value of pow(n,1.5) / timeUsed: 422.833
+Insert the number n: 
+Input n is: 100000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 1600000
+Value of n / result: 0.0625
+Value of n*log2(n) / result: 1.0381
+Value of pow(n,1.5) / result: 19.7642
+Value of timeUsed: 28365
+Value of n / timeUsed: 3.52547
+Value of n*log2(n) / timeUsed: 58.5568
+Value of pow(n,1.5) / timeUsed: 1114.85
+Insert the number n: 
+Input n is: 1000000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 19000000
+Value of n / result: 0.0526316
+Value of n*log2(n) / result: 1.04903
+Value of pow(n,1.5) / result: 52.6316
+Value of timeUsed: 303286
+Value of n / timeUsed: 3.29722
+Value of n*log2(n) / timeUsed: 65.7187
+Value of pow(n,1.5) / timeUsed: 3297.22
+Insert the number n: 
+Input n is: 10000000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 230000000
+Value of n / result: 0.0434783
+Value of n*log2(n) / result: 1.01102
+Value of pow(n,1.5) / result: 137.49
+Value of timeUsed: 3.67794e+06
+Value of n / timeUsed: 2.71892
+Value of n*log2(n) / timeUsed: 63.2243
+Value of pow(n,1.5) / timeUsed: 8597.97
+Insert the number n: 
+Input n is: 20000000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 480000000
+Value of n / result: 0.0416667
+Value of n*log2(n) / result: 1.01056
+Value of pow(n,1.5) / result: 186.339
+Value of timeUsed: 7.7656e+06
+Value of n / timeUsed: 2.57546
+Value of n*log2(n) / timeUsed: 62.4639
+Value of pow(n,1.5) / timeUsed: 11517.8
+Insert the number n: 
+Input n is: 50000000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 1250000000
+Value of n / result: 0.04
+Value of n*log2(n) / result: 1.02302
+Value of pow(n,1.5) / result: 282.843
+Value of timeUsed: 2.18558e+07
+Value of n / timeUsed: 2.28773
+Value of n*log2(n) / timeUsed: 58.5096
+Value of pow(n,1.5) / timeUsed: 16176.7
+Insert the number n: 
+Input n is: 100000000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 2600000000
+Value of n / result: 0.0384615
+Value of n*log2(n) / result: 1.02213
+Value of pow(n,1.5) / result: 384.615
+Value of timeUsed: 4.52222e+07
+Value of n / timeUsed: 2.2113
+Value of n*log2(n) / timeUsed: 58.7663
+Value of pow(n,1.5) / timeUsed: 22113
+Insert the number n: 
+Input n is: 300000000
+TIME USED HAS BEEN MULTIPLIED BY 1,000,000
+Result of Algorithm: 8400000000
+Value of n / result: 0.0357143
+Value of n*log2(n) / result: 1.00573
+Value of pow(n,1.5) / result: 618.59
+Value of timeUsed: 1.45167e+08
+Value of n / timeUsed: 2.06659
+Value of n*log2(n) / timeUsed: 58.196
+Value of pow(n,1.5) / timeUsed: 35794.4

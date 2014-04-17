@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CS340Assignment1", "CS340Assignment1\CS340Assignment1.vcxproj", "{BD420F4F-FD35-4953-9552-8903B69A3CEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD420F4F-FD35-4953-9552-8903B69A3CEE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BD420F4F-FD35-4953-9552-8903B69A3CEE}.Debug|Win32.Build.0 = Debug|Win32
+		{BD420F4F-FD35-4953-9552-8903B69A3CEE}.Release|Win32.ActiveCfg = Release|Win32
+		{BD420F4F-FD35-4953-9552-8903B69A3CEE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
