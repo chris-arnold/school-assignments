@@ -1,0 +1,7 @@
+chris@Hydra:~/CS435/Assignment1$ g++ -std=c++0x main.cpp
+chris@Hydra:~/CS435/Assignment1$ ./a.out
+Enter Text: meet me at the usual place
+Processed Text: meetmeattheusualplace
+Encrypted Text: gsebxicnjbpmwkydebcqc
+Decrypted Text: meetmeattheusualplace
+chris@Hydra:~/CS435/Assignment1$
