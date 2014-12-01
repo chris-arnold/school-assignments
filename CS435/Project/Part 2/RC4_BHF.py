@@ -112,6 +112,7 @@ if __name__ == '__main__':
 	print "Padded length", len(nstr)
 	print nstr.encode('string_escape')
 	offset=int(raw_input("Enter the offest:"))
+	#offset=offset%16
 
 	h=RC4_BHF(nstr,offset)
 	print "hash value:\n", h.encode('string_escape')

@@ -36,7 +36,7 @@ def expand_package(package):
 def remove_padding(data):
 	r1 = re.compile("\x80\x00+$")
 	if r1.search(data):
-		print "Last package",
+		print "Last package detected, removing padding.",
 		if data[len(data)-1] == "\x80":
 			data = data[:len(data)]
 		else:
@@ -112,7 +112,7 @@ def decrypt_package(package,State,offset):
 		return (package_number, "Hash Check failed\n", State)
 		#exit()			#if hashes don't match, quit program
 	else:
-		print "Hash check passed. Package",package_number,"received."
+		print "\nHash check passed. Package",package_number,"received.",
 
 	return (package_number, remove_padding(msg), State)
 
@@ -138,7 +138,7 @@ def receiver(packages, key, offset):
 	for key in sorted(msgParts):
 		message += msgParts[key]
 
-	print "Message length", len(message)
+	print "\nLength of received message is", len(message), "bytes."
 	return message
 
 '''

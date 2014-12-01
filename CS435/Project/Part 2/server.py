@@ -18,7 +18,7 @@ if __name__ == '__main__':
 			conn, addr = s.accept()
 			print 'Connected by', addr
 		except KeyboardInterrupt:
-			print "\nInterupt detected. Shutting down server"
+			print "\nInterrupt detected. Shutting down server"
 			try:
 				conn.close()
 				print "Socket closed."
@@ -34,9 +34,10 @@ if __name__ == '__main__':
 		print len(packages),"Packages have been received."
 		key=raw_input("Enter the key: ")
 		offset=int(raw_input("Enter the offset: "))
+		#offset=offset%16
 
 		msg = receiver(packages, key,offset)
 		nothin=raw_input("Press enter to view message")
-		print '~'*30, "Begin Message", "~"*30
-		print msg, '\n', '~'*30, 'End Message', '~'*32,'\n'
+		print '~'*15, "Begin Message", "~"*15
+		print msg, '\n', '~'*15, 'End Message', '~'*17,'\n'
 

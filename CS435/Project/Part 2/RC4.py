@@ -116,8 +116,8 @@ if __name__ == '__main__':
 				print "\tTest Successful"
 			else:
 				print "\tTest Failed"
+		print "%d/%d test cases were successful" % (count, testruns)
 	else:
 		print "Invalid input. Exiting program"
 
-	print "%d/%d test cases were successful" % (count, testruns)
 
